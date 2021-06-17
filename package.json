@@ -1,6 +1,6 @@
 {
   "name": "reddit-share-link-shortener",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Shortens post or comment share links on Reddit",
   "main": "index.js",
   "scripts": {
