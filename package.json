@@ -1,0 +1,19 @@
+{
+  "name": "reddit-share-link-shortener",
+  "version": "1.0",
+  "description": "Shortens Reddit share links for sharing the post or comment",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "reddit",
+    "url",
+    "link",
+    "reddit-share",
+    "share",
+    "share-link",
+    "sharing",
+  ],
+  "author": "mekb-turtle"
+}
