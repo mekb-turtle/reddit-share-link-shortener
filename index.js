@@ -1,4 +1,4 @@
-#!/usr/env node
+#!/bin/env node
 const querystring = require("querystring");
 var short = (link) => {
 	var f = link.match(/^(https?\:\/\/)?(www\.)?reddit\.com\/([ur]\/[a-zA-Z0-9_\-]{2,24})(\/((comments\/([A-Z0-9a-z]{4,8}))(\/[a-zA-Z0-9_]+(\/([A-Z0-9a-z]{4,8})?)?)?([\#\?].*)?)?)?$/);
