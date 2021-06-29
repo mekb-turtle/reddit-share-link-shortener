@@ -1,5 +1,5 @@
 const querystring = require("querystring");
-module.exports = (link) => {
+var short = (link) => {
 	var f = link.match(/^(https?\:\/\/)?(www\.)?reddit\.com\/([ur]\/[a-zA-Z0-9_\-]{2,24})(\/((comments\/([A-Z0-9a-z]{4,8}))(\/[a-zA-Z0-9_]+(\/([A-Z0-9a-z]{4,8})?)?)?([\#\?].*)?)?)?$/);
 	if (!f) return null;
 	var url = `https://reddit.com`;
@@ -24,4 +24,18 @@ module.exports = (link) => {
 	}
 	return url;
 };
+if (require.main === module) {
+	const argv = require("minimist")(process.argv.splice(2));
+	const url = argv.url || argv.u;
+	if (typeof url == 'string') {
+		var e = short(url);
+		if (e) console.log(e);
+		process.exit(e ? 0 : 1);
+	} else {
+		console.error('requires argument --url -u');
+		process.exit(2);
+	}
+} else {
+	module.exports = short;
+}
 
