@@ -31,7 +31,7 @@ if (require.main === module) {
 	const url = argv.url || argv.u;
 	if (typeof url == 'string') {
 		var e = short(url);
-		if (e) console.log(e);
+		if (e) process.stdout.write(e);
 		process.exit(e ? 0 : 1);
 	} else {
 		console.error('requires argument --url -u');
