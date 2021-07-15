@@ -1,7 +1,8 @@
 #!/bin/env node
 const querystring = require("querystring");
 var short = (link) => {
-	var f = link.match(/^(https?\:\/\/)?(www\.)?reddit\.com\/([ur]\/[a-zA-Z0-9_\-]{2,24})(\/((comments\/([A-Z0-9a-z]{4,8}))(\/[a-zA-Z0-9_]+(\/([A-Z0-9a-z]{4,8})?)?)?([\#\?].*)?)?)?$/);
+	if (link[link.length-1]=="/"&&link[link.length-2]!="/") link = link.substring(0, link.length-1);
+	var f = link.match(/^(https?\:\/\/)?(www\.)?reddit\.com\/([ur]\/[a-zA-Z0-9_\-]{2,24})(\/((comments\/([A-Z0-9a-z]{4,8}))(\/[a-zA-Z0-9_]+(\/(([A-Z0-9a-z]{4,8})?))?)?([\#\?].*)?)?)?$/);
 	if (!f) return null;
 	var url = `https://reddit.com`;
 	if (f[3]) {
